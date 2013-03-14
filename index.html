@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+<script src="clockcode.js"></script>
+<link rel="stylesheet" src="css_style.css" />
+
+<style>          
+
+
+
+</style>
+</head>
+<body>
+
+<div data-role="page" id="one" data-theme="b">
+
+	<div data-role="header" data-theme="d" data-position="inline" data-nobackbtn="true">
+			<a id="options" href="#modes" data-role="button" data-rel="dialog" data-transition="slide" data-icon="gear" class="ui-btn-right">Mode</a>	
+			<a id="options" href="#times" data-role="button" data-rel="dialog" data-transition="slide" data-icon="gear" class="ui-btn-left">Clock Times</a>	
+			<h1>Knight Clock </h1>
+			<h3>Advanced chess clock</h3>
+
+	</div><!-- /header -->
+	
+	
+	<div id="canv_holder" data-role="content">
+			<p>
+
+			<a href="#" data-role="button" data-theme="d" id="startbut" data-inline="true" data-mini="true" onclick="go_clock()" data-icon="check">Start Clock</a>
+			<a href="#" data-role="button" data-theme="d" id="pause" data-inline="true" data-mini="true"  onclick="go_clock()" >Pause</a>
+			<a href="#" data-role="button" data-theme="d" id="reset" data-inline="true" data-mini="true"  onclick="go_clock()"  data-icon="delete">Reset</a>
+			</p>
+			
+			<ul data-role="listview"  >
+			
+			<li data-theme="d">
+			<a href="#" onclick="start2()">
+			
+			<p></p>
+			<span style=""> WHITE </span>
+			<p id="wtme" data-theme="d"  name="wtme" class="ui-li-aside" style="font-size:180%">&nbsp;</p>
+			<br/>
+			<p id="showmode1" style="margin-top:6px">&nbsp;</p><p>&nbsp;</p>
+			</a>
+			</li>
+			<li data-theme="a" >
+			<a href="#" onclick="start1()">
+			
+			<p></p>
+			<span style=""> BLACK </span>
+			<p name="btme" data-theme="a" class="ui-li-aside" id="btme" style="font-size:180%">&nbsp;</p>
+			<br/>
+			<p id="showmode2" style="margin-top:6px">&nbsp;</p><p>&nbsp;</p>
+			</a>
+			</li>
+			</ul>
+
+
+
+
+			
+			<p id="msg" name="msg">			</p>
+		</div>
+			<div data-role="footer" data-theme="d">
+				<h4>KnightClock - The Chess Clock App</h4>
+			</div><!-- /footer -->
+</div>	
+<div data-role="page" id="modes" data-theme="b">
+	<div data-role="header" data-theme="b" data-position="inline" data-nobackbtn="false">
+		<h1> Choose mode</h2>
+
+	</div>	
+	<div id="" data-role="content">
+		<div data-role="controlgroup">
+		<a href="#" onclick="modeset('std')" data-role="button" data-theme="d" data-position="inline" data-mini="true" >Standard </a>
+		<a href="#" onclick="modeset('std')" data-role="button" data-theme="d" data-position="inline" data-mini="true" >Fischer delay </a>
+		<a href="#" onclick="modeset('std')" data-role="button" data-theme="d" data-position="inline" data-mini="true" >Fischer delay (after) </a>
+		<a href="#" onclick="modeset('std')" data-role="button" data-theme="d" data-position="inline" data-mini="true" >Bronstein delay </a>
+		<a href="#" onclick="modeset('std')" data-role="button" data-theme="d" data-position="inline" data-mini="true" >Hourglass </a>
+		</div>
+	</div>
+	
+	
+</div>
+	
+<div data-role="page" id="times" data-theme="b">
+		<div data-role="header" data-theme="b">
+		<h1>Set times</h1>
+		</div>
+			
+		<div data-role="content" >
+
+						Set Your Clock Times
+			<label id="info" >Set times </label>
+			<select id="hrset" onchange="setClock()" data-theme="b" data-inline="true" >
+				<option value="00">0 hours</option>
+				<option value="3600">1 hour</option>
+				<option value="7200">2 hours</option>
+				<option value="10800">3 hours</option>
+				<option value="14400">4 hours</option>
+			</select>
+			<select id="minset" onchange="setClock()" data-theme="b" data-inline="true" >
+				<option value="00">0 mins</option>
+				<option value="60">1 mins</option>
+				<option value="120">2 mins</option>
+				<option value="180">3 mins</option>
+				<option value="240">4 mins</option>
+				<option value="300">5 mins</option>
+				<option value="360">6 mins</option>
+				<option value="420">7 mins</option>
+				<option value="480">8 mins</option>
+				<option value="540">9 mins</option>
+				<option value="600">10 mins</option>
+				<option value="900">15 mins</option>
+				<option value="1200">20 mins</option>
+				<option value="1500">25 mins</option>
+				<option value="1800">30 mins</option>
+				<option value="2100">35 mins</option>
+				<option value="2400">40 mins</option>
+				<option value="2700">45 mins</option>
+				<option value="3000">50 mins</option>
+				<option value="3300">55 mins</option>
+				
+			
+			
+			
+			
+			
+			</select>
+			
+		</div>
+
+			</div>
+		
+
+</div>	
+</body>
+</html>
